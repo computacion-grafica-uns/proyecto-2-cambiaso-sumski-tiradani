@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MaterialNuevo
-  m_Shader: {fileID: 4800000, guid: 61524e4a9dfaea24dbd65ebe84a2023a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 949c04e1f04cd4a4db4bb027e1c82c85, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -77,4 +77,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightColor_w: {r: 0.29019615, g: 0.7344834, b: 0.8, a: 1}
+    - _LightPosition_w: {r: 19.1, g: 598, b: -124, a: 1}
+    - _MaterialColor: {r: 0.85882354, g: 0.1490196, b: 0.19645253, a: 1}
   m_BuildTextureStacks: []
