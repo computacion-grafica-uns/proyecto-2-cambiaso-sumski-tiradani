@@ -6,13 +6,14 @@ using UnityEngine;
 public class CamaraOrbital: MonoBehaviour
 {
     public GameObject camara;
-    public GameObject[] orbitTargets;
+    public GameObject carpetaTargets;
+    private GameObject[] orbitTargets;
     private int currentTarget = 0;
     private int lastTargetIndex;
 
     // Camera properties
     private float moveSpeed = 4f;
-    public float angle = 90;
+    private float angle = 90;
     private float orbitRadius = 23f;
     private float fov = 100;
 
@@ -25,7 +26,6 @@ public class CamaraOrbital: MonoBehaviour
 
     private void FillTargets()
     {
-        GameObject carpetaTargets = GameObject.Find("Autos");
         orbitTargets = new GameObject[carpetaTargets.transform.childCount];
         lastTargetIndex = carpetaTargets.transform.childCount - 1;
         for (int i = 0; i < carpetaTargets.transform.childCount; i++)
