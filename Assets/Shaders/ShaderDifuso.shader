@@ -3,7 +3,7 @@ Shader "Custom/ShaderDifuso"
     Properties
     {
         _MaterialColor ("Material Color", Color) = (0.25, 0.5, 0.5, 1)
-        _LightPosition_w ("Light Position (World)", Vector) = (0, 5, 0, 1)
+        _LightDirection_w ("Light Direction (World)", Vector) = (0, 5, 0, 1)
         _LightColor_w ("Light Color (World)", Color) = (1, 1, 0)
     }
     SubShader
@@ -31,7 +31,7 @@ Shader "Custom/ShaderDifuso"
             };
 
             float4 _MaterialColor;
-            float4 _LightPosition_w;
+            float4 _LightDirection_w;
             float4 _LightColor_w;
 
             v2f vertexShader(vertexData v){
@@ -44,7 +44,7 @@ Shader "Custom/ShaderDifuso"
             }
 
             fixed4 fragmentShader (v2f f) : SV_Target {
-                float3 L = normalize(_LightPosition_w.xyz - f.position_w.xyz); 
+                float3 L = normalize(_LightDirection_w.xyz); 
                 float3 N = f.normal_w;
 
                 fixed4 fragColor = 0;

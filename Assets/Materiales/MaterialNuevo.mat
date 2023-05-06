@@ -82,6 +82,7 @@ Material:
     - _DirectionalLightDirection_w: {r: 4.61, g: -1, b: -0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightColor_w: {r: 0.29019615, g: 0.7344834, b: 0.8, a: 1}
+    - _LightDirection_w: {r: 0, g: 5, b: 0, a: 1}
     - _LightPosition_w: {r: 19.1, g: 598, b: -124, a: 1}
     - _MaterialColor: {r: 0.85882354, g: 0.1490196, b: 0.19645253, a: 1}
     - _PointLightColor: {r: 1, g: 0.92988515, b: 0, a: 1}
