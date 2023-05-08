@@ -57,6 +57,12 @@ public class CamaraPrimeraPersona : MonoBehaviour
             adDirection = adDirection * moveSpeed * Time.deltaTime;
             adDirection.y = 0f;
 
+            if (Input.GetKey(KeyCode.LeftShift)) 
+                camara.transform.position -= new Vector3(0, moveSpeed * Time.deltaTime, 0);
+
+            if (Input.GetKey(KeyCode.Space))
+                camara.transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
+
             if (Input.GetKey(KeyCode.W)) 
                 camara.transform.position += wsDirection;
 
@@ -68,6 +74,7 @@ public class CamaraPrimeraPersona : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
                 camara.transform.position += adDirection;
+
         }
     }
 }

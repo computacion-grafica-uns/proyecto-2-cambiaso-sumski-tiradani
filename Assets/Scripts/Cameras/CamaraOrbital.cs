@@ -6,8 +6,10 @@ using UnityEngine;
 public class CamaraOrbital: MonoBehaviour
 {
     public GameObject camara;
+    public GameObject targetCentral;
     public GameObject carpetaTargets;
     public bool escenaB; //Si es true -> es escena B y se puede intercambiar
+
     private bool active = true;
 
     private GameObject[] orbitTargets;
@@ -29,11 +31,13 @@ public class CamaraOrbital: MonoBehaviour
 
     private void FillTargets()
     {
-        orbitTargets = new GameObject[carpetaTargets.transform.childCount];
-        lastTargetIndex = carpetaTargets.transform.childCount - 1;
+        orbitTargets = new GameObject[carpetaTargets.transform.childCount + 1];
+        lastTargetIndex = carpetaTargets.transform.childCount;
+
+        orbitTargets[0] = targetCentral;
         for (int i = 0; i < carpetaTargets.transform.childCount; i++)
         {
-            orbitTargets[i] = carpetaTargets.transform.GetChild(i).gameObject;
+            orbitTargets[1 + i] = carpetaTargets.transform.GetChild(i).gameObject;
         }
     }
 
