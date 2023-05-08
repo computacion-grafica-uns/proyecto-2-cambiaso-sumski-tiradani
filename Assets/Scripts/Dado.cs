@@ -13,7 +13,7 @@ public class Dado : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objetoCuadrado = new GameObject("Dado mm puntos extras");
+        objetoCuadrado = new GameObject("Dado");
 
         objetoCuadrado.AddComponent<MeshFilter>(); // agrega un manejador de mallas
         objetoCuadrado.GetComponent<MeshFilter>().mesh = new Mesh();
@@ -131,5 +131,6 @@ public class Dado : MonoBehaviour
 
         objetoCuadrado.GetComponent<MeshRenderer>().material = newMaterial; 
 
+        objetoCuadrado.transform.localScale = new Vector3(0.11f,0.11f,0.11f);
     }
 }

@@ -1102,7 +1102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1463603786}
   - component: {fileID: 1463603785}
-  - component: {fileID: 1463603784}
   - component: {fileID: 1463603783}
   m_Layer: 0
   m_Name: "C\xE1mara Orbital"
@@ -1125,14 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 1463603782}
   carpetaTargets: {fileID: 934219948}
---- !u!81 &1463603784
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463603782}
-  m_Enabled: 1
+  escenaB: 0
 --- !u!20 &1463603785
 Camera:
   m_ObjectHideFlags: 0

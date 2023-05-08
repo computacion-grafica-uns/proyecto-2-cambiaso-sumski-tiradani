@@ -7,6 +7,9 @@ public class CamaraOrbital: MonoBehaviour
 {
     public GameObject camara;
     public GameObject carpetaTargets;
+    public bool escenaB; //Si es true -> es escena B y se puede intercambiar
+    private bool active = true;
+
     private GameObject[] orbitTargets;
     private int currentTarget = 0;
     private int lastTargetIndex;
@@ -45,12 +48,19 @@ public class CamaraOrbital: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (escenaB && Input.GetKeyDown(KeyCode.C))
+        {
+            active = !active;
+            camara.SetActive(active);
+        }
 
-        HandleObjectChange();
+        if(active){
+            HandleObjectChange();
 
-        HandleLeftAndRightMovement();
+            HandleLeftAndRightMovement();
 
-        HandleZoom();
+            HandleZoom();
+        }
     }
 
     private void HandleObjectChange()
