@@ -76,6 +76,7 @@ Shader "Custom/BlinnPhongTextura"
                 output.vertex = UnityObjectToClipPos(v.position);
                 output.position_w = mul(unity_ObjectToWorld, v.position);
                 output.normal_w = UnityObjectToWorldNormal(v.normal);
+                output.uv = v.uv;
                 return output;
             }
 
@@ -89,46 +90,56 @@ Shader "Custom/BlinnPhongTextura"
 
                 fixed4 _MaterialKd = tex2D(_MainText, f.uv);
 
-                // Point, esta como Phong
+                // Point
 
-                float3 L = normalize(_PointLightPosition_w.xyz - f.position_w.xyz);
+                float3 point_L = normalize(_PointLightPosition_w.xyz - f.position_w.xyz);
 
-                float3 pointDiffuse = _PointLightIntensity * _MaterialKd * max(0, dot(N,L));
+                float3 pointDiffuse = _PointLightIntensity * _MaterialKd * max(0, dot(N,point_L));
 
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
-                float3 H = (L + V) / 2; // Blinn
+                float3 H = (point_L + V) / 2; 
 
-                //float3 R = reflect(-L,N); // Phong
-                //float3 pointSpecular = _PointLightIntensity * _PointMaterialKs * pow(max(0,dot(R,V)),max(1,_PointMaterial_n)); // Phong
-
-                float3 pointSpecular = _PointLightIntensity * _PointMaterialKs * pow(max(0,dot(H,N)),max(1,_PointMaterial_n)); // Blinn
+                float3 pointSpecular = _PointLightIntensity * _PointMaterialKs * pow(max(0,dot(H,N)),max(1,_PointMaterial_n));
 
                 // Directional
 
-                L = 0;
+                float directional_L = normalize(-(_DirectionalLightDirection_w.xyz));
 
-                float3 directionalDiffuse = 0;
+                float3 directionalDiffuse = _DirectionalLightIntensity * _MaterialKd * (max(0, dot(directional_L, N)));
+                
+                V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
+                H = (directional_L + V)/2;
 
-                V = 0;
-                H = 0;
-
-                float3 directionalSpecular = 0;
+                float3 directionalSpecular = _DirectionalLightIntensity * _DirectionalMaterialKs * pow(max(0,dot(H,N)),max(1,_DirectionalMaterial_n));
 
                 // Spot
 
-                L = 0;
+                float diffCoef = 0;
+                float specCoef = 0;
 
-                float cosenoDireccion = 0; // hay que hacer lo del IF en ambos, especular y difuso
+                float3 spot_L = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
 
-                float3 spotDiffuse = 0;
+                float cosenoDireccion = dot(-(_SpotLightDirection_w), spot_L);
 
-                V = 0;
-                H = 0;
+                if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
+                    diffCoef = max(0,dot(N,spot_L));
+                }
 
-                float3 spotSpecular = 0;
+                float3 spotDiffuse = _SpotLightIntensity * _MaterialKd * (diffCoef);
+
+                V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
+                H = (spot_L + V)/2;
+
+                if(cosenoDireccion >= cos(radians(_SpotAperture)) ){
+                    specCoef = pow(max(0,dot(H, N)), max(1,_SpotMaterial_n));
+                }
+
+                float3 spotSpecular = _SpotLightIntensity * _SpotMaterialKs * specCoef;
 
                 fragColor.rgb = ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
+
                 return fragColor;
+
             } 
             ENDCG
         }

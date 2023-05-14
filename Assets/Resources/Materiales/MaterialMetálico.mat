@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "MaterialMet\xE1lico"
-  m_Shader: {fileID: 4800000, guid: 903542d2ef78ba841be818ed3cf13528, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6a541b531f05c5343a9d93df6f1298e1, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -42,6 +42,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 7858e089e32dbf64bb0095df8554f289, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainText:
+        m_Texture: {fileID: 2800000, guid: e15445d36c65b044f8aff4e4a966f277, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -79,19 +83,19 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.24999997, g: 0.5, b: 0.5, a: 1}
+    - _AmbientLight: {r: 0.26432896, g: 0.5660378, b: 0.5660378, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightColor: {r: 0, g: 0, b: 0, a: 1}
-    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 1}
+    - _DirectionalLightDirection_w: {r: -0.56, g: -6.65, b: -1.67, a: 1}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalMaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _DirectionalMaterialKs: {r: 0.46226418, g: 0.16789782, b: 0.16789782, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0, g: 0, b: 0, a: 0}
+    - _MaterialKa: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0}
     - _MaterialKd: {r: 0, g: 0, b: 0, a: 0}
     - _PointLightColor: {r: 1, g: 0.8549239, b: 0, a: 1}
-    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: 1.31, g: 0.96, b: -3.76, a: 1}
-    - _PointMaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _PointLightIntensity: {r: 1, g: 0.9103774, b: 0.9103774, a: 1}
+    - _PointLightPosition_w: {r: -8.33, g: 0.99, b: -3.76, a: 1}
+    - _PointMaterialKs: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
     - _SpotLightColor: {r: 0, g: 0, b: 1, a: 1}
     - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 1}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
