@@ -1,4 +1,4 @@
-Shader "Custom/ShaderMultitextura"
+Shader "Custom/Shader3Texturas"
 {
     Properties
     {
@@ -10,6 +10,8 @@ Shader "Custom/ShaderMultitextura"
 
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
+        _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
+        _DirectionalLightDirection_w ("Directional Light Direction (World)", Vector) = (0, 5, 0, 1)
 
     }
     SubShader

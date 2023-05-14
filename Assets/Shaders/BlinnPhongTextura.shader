@@ -11,12 +11,14 @@ Shader "Custom/BlinnPhongTextura"
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
         _PointMaterialKs("Point Material Ks", Color) = (0,0,0,0)
         _PointMaterial_n("Point Material n", float) = 1
+        _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
 
         _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
         _DirectionalMaterialKs("Directional Material Ks", Color) = (0,0,0,0)
         _DirectionalMaterial_n("Directional Material n", float) = 1
-
+        
+        _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
         _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)

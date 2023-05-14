@@ -6,6 +6,7 @@ Shader "Custom/BlinnPhong"
         _MaterialKa("Ambient Material Ka", Color) = (0,0,0,0)
         _MaterialKd("Material Kd", Color) = (0,0,0,0)
 
+        _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
         _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
         _PointMaterialKs("Point Material Ks", Color) = (0,0,0,0)
@@ -16,6 +17,7 @@ Shader "Custom/BlinnPhong"
         _DirectionalMaterialKs("Directional Material Ks", Color) = (0,0,0,0)
         _DirectionalMaterial_n("Directional Material n", float) = 1
 
+        _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
         _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)

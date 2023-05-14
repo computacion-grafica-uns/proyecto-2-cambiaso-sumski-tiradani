@@ -10,6 +10,12 @@ Shader "Custom/Shader2Texturas"
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
 
+        _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
+        _SpotLightPosition_w ("Spot Light Position (World)", Vector) = (0, 5, 0, 1)
+
+        _DirectionalLightColor ("Directional Light Color", Color) = (1, 0, 0, 1)
+        _DirectionalLightDirection_w ("Directional Light Direction (World)", Vector) = (0, 5, 0, 1)
+
     }
     SubShader
     {
