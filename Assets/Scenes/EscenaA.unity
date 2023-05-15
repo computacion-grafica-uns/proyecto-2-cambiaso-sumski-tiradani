@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fdd101166454218449063a5ed3a4f707, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (2)
@@ -592,6 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834873199}
+  - component: {fileID: 834873200}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -607,13 +612,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834873198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 666056865}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834873200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834873198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd70e14bdabbbc42bb031973736ae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 834873198}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  materiales: []
 --- !u!1001 &900089618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -778,9 +799,6 @@ MonoBehaviour:
   pointLight: {fileID: 834873198}
   spotLight: {fileID: 1170216941}
   materiales: []
-  direcColor: {r: 0, g: 0.25365853, b: 1, a: 0}
-  pointColor: {r: 1, g: 0, b: 0, a: 0}
-  spotColor: {r: 0.45322704, g: 1, b: 0, a: 0}
 --- !u!1001 &1119216533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,6 +1022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1170216942}
+  - component: {fileID: 1170216943}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -1019,13 +1038,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170216941}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.1, y: 24.6, z: 8.38}
+  m_LocalPosition: {x: 1.2, y: 24.6, z: 16.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 666056865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1170216943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170216941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b715695bdecd6984b8c75a7e9aacdae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 1170216941}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  aperture: 45
+  materiales: []
 --- !u!1001 &1214890940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1539,6 +1575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072532485}
+  - component: {fileID: 2072532486}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1561,6 +1598,22 @@ Transform:
   m_Father: {fileID: 666056865}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &2072532486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072532484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f07547e788e3d4290f20e4043d3438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 2072532484}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  materiales: []
 --- !u!1001 &2087556279
 PrefabInstance:
   m_ObjectHideFlags: 0

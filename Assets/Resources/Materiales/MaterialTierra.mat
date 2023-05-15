@@ -88,7 +88,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightDirection_w: {r: -0.20781507, g: -0.97816813, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: 37.12, g: 32.3, b: 31.41, a: 1}
+    - _PointLightPosition_w: {r: 8.903399, g: -14.727501, b: -8.692472, a: 0}
+    - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

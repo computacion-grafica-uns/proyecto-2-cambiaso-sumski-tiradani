@@ -12,16 +12,6 @@ public class ManejadorLuces : MonoBehaviour
 
     public Material[] materiales;
 
-
-    public Color direcColor = new Color(0, 0, 1);
-    public Color pointColor = new Color(0, 1, 0);
-    public Color spotColor = new Color(1, 0, 0);
-
-    Color oldPointLightColor;
-    Color oldSpotLightColor;
-    Vector4 oldDirectionalLightDirection;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,61 +21,59 @@ public class ManejadorLuces : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TO - DO
-
-        // Agarrar la pos de los 3 gameobjects y los colores
-        // y pasarselo a todos los materiales que existan
-        // para que se actualice con la posicion de la luz
         
-        foreach (Material material in materiales)
-        {
-            oldSpotLightColor = material.GetColor("_SpotLightColor");
-            oldPointLightColor = material.GetColor("_PointLightColor");
-            oldDirectionalLightDirection = material.GetVector("_DirectionalLightDirection_w");
-        }
-
         // Directional light
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            foreach (Material material in materiales)
+
+            if (directionalLight.activeSelf)
             {
-                if(!material.GetVector("_DirectionalLightDirection_w").Equals(new Vector4(0, 0, 0, 1))){
-                    oldDirectionalLightDirection = material.GetVector("_DirectionalLightDirection_w");
+                directionalLight.SetActive(false);
+                foreach (Material material in materiales)
+                {
                     material.SetVector("_DirectionalLightDirection_w", new Vector4(0, 0, 0, 1));
                 }
-                else
-                {
-                    material.SetVector("_DirectionalLightDirection_w", oldDirectionalLightDirection);
-                }
+            } else
+            {
+                directionalLight.SetActive(true);
             }
+
         }
         // Point light
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            foreach (Material material in materiales)
+
+            if (pointLight.activeSelf)
             {
-                if (material.GetColor("_PointLightColor") != Color.black)
+                pointLight.SetActive(false);
+                foreach (Material material in materiales)
                 {
-                    oldPointLightColor = material.GetColor("_PointLightColor");
                     material.SetColor("_PointLightColor", Color.black);
                 }
-                else
-                    material.SetColor("_PointLightColor", oldPointLightColor);
+            }
+            else
+            {
+                pointLight.SetActive(true);
             }
         }
         // SpotLight
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            foreach (Material material in materiales)
+
+            if (spotLight.activeSelf)
             {
-                if (material.GetColor("_SpotLightColor") != Color.black)
+                spotLight.SetActive(false);
+                foreach (Material material in materiales)
                 {
-                    oldSpotLightColor = material.GetColor("_SpotLightColor");
                     material.SetColor("_SpotLightColor", Color.black);
                 }
-                else
-                    material.SetColor("_SpotLightColor", oldSpotLightColor);
             }
+            else
+            {
+                spotLight.SetActive(true);
+            }
+
         }
+        
     }
 }
