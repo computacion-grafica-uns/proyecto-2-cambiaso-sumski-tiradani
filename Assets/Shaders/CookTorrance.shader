@@ -82,20 +82,20 @@ Shader "Custom/CookTorrance"
 
                 float A = 1.0 - 0.5 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.33));
                 float B = 0.45 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.09));
-                float C = (dot(normalize(V - N * NdotV), normalize(L - N * NdotL)));
+                float C = saturate(dot(normalize(V - N * NdotV), normalize(L - N * NdotL)));
 
                 float alpha  = max(acos(NdotL), acos(NdotV));
                 float beta   = min(acos(NdotL), acos(NdotV));
 
                 // preguntar!!!
-                //return _Albedo.rgb / PI * (A + B * C * sin(alpha) * tan(beta)) * NdotL;
-                return max(0,dot(N,L)) * _Albedo.rgb; // Difuso de phong
+                return _Albedo.rgb / PI * (A + B * C * sin(alpha) * tan(beta)) * NdotL;
+                //return max(0,dot(N,L)) * _Albedo.rgb; // Difuso de phong
             }
 
             float F(float3 V, float3 H){
                 float VdotH = saturate(dot(V, H)); 
 
-                return _Metallic + (1.0 - _Metallic) * pow(1.0 - VdotH, 5);;
+                return _Metallic + (1.0 - _Metallic) * pow(1.0 - VdotH, 5);
             }
 
             float D(float3 H, float3 N){
