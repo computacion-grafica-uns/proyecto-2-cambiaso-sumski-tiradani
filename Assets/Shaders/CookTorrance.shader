@@ -116,7 +116,7 @@ Shader "Custom/CookTorrance"
 
             fixed4 fragmentShader(v2f f) : SV_Target {
                 fixed4 fragColor = 0;
-                float3 ambient = _AmbientLight * _MaterialKa;
+                float3 ambient = _AmbientLight * _MaterialKa * _Albedo;
 
                 // Point
                 float3 N = normalize(f.normal_w);
@@ -130,7 +130,7 @@ Shader "Custom/CookTorrance"
                 // Point Specular Cook-Torrance
                 float NdotL = saturate(dot(N, L));
                 float NdotV = saturate(dot(N, V));
-                float3 pointSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV)) * _PointLightIntensity * _PointLightColor;
+                float3 pointSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV)) * PI * _PointLightIntensity * _PointLightColor;
 
                 // Directional
                 L = normalize(-(_DirectionalLightDirection_w.xyz));
@@ -142,13 +142,15 @@ Shader "Custom/CookTorrance"
                 // Directional Specular Cook-Torrance
                 NdotL = saturate(dot(N, L));
                 NdotV = saturate(dot(N, V));
-                float3 directionalSpecular = ((F(V,H) * D(H,N) * G(L,V,N) / (4.0 * NdotV)) * _DirectionalLightIntensity * _DirectionalLightColor) ;
+                float3 directionalSpecular = saturate((F(V,H) * D(H,N) * G(L,V,N) / (4.0 * NdotV)) * PI * _DirectionalLightIntensity * _DirectionalLightColor) ;
 
                 // Spot
 
                 L = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
                 H = (L + V)/2;
                 float cosenoDireccion = dot(-(_SpotLightDirection_w), L);
+                NdotL = saturate(dot(N, L));
+                NdotV = saturate(dot(N, V));
                 
                 float3 spotDiffuse = 0;
                 float3 spotSpecular = 0;
@@ -161,10 +163,10 @@ Shader "Custom/CookTorrance"
 
                 // Spot Specular Cook-Torrance
                 if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    spotSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * _SpotLightIntensity * _SpotLightColor) ;
+                    spotSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * PI * _SpotLightIntensity * _SpotLightColor) ;
                 }
 
-                fragColor.rgb = ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
+                fragColor = fixed4(ambient + lerp(pointDiffuse, pointSpecular, _Metallic) + lerp(directionalDiffuse, directionalSpecular, _Metallic) + lerp(spotDiffuse, spotSpecular, _Metallic), 1.0) ; // ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
 
                 return fragColor;
             } 
