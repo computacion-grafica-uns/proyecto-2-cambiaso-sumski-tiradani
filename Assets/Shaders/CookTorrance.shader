@@ -83,12 +83,12 @@ Shader "Custom/CookTorrance"
                 float A = 1.0 - 0.5 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.33));
                 float B = 0.45 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.09));
                 float C = saturate(dot(normalize(V - N * NdotV), normalize(L - N * NdotL)));
-
+               
                 float alpha  = max(acos(NdotL), acos(NdotV));
                 float beta   = min(acos(NdotL), acos(NdotV));
 
                 // preguntar!!!
-                return _Albedo.rgb / PI * (A + B * C * sin(alpha) * tan(beta)) * NdotL;
+                return _Albedo.rgb / PI * (A + (B * C * sin(alpha) * tan(beta))) * NdotL;
                 //return max(0,dot(N,L)) * _Albedo.rgb; // Difuso de phong
             }
 
@@ -100,18 +100,29 @@ Shader "Custom/CookTorrance"
 
             float D(float3 H, float3 N){
                 float NdotH = saturate(dot(N, H));
+                float alpha = pow(_Roughness,2);
 
-                return pow(_Roughness,4) / (PI * pow(NdotH * NdotH * (pow(_Roughness,4) - 1.0) + 1.0, 2));
+                return alpha / (PI * pow(pow(NdotH,2) * (pow(alpha,2) - 1.0) + 1.0, 2));
             }
 
             float G(float3 L, float3 V, float3 N){
                 float NdotL = saturate(dot(N, L));
                 float NdotV = saturate(dot(N, V));
-                float k  = _Roughness * _Roughness / 2.0;
+                // float alpha = pow(_Roughness,2);
+                // float k  = alpha / 2.0;
 
-                float gl = NdotL / (NdotL * (1.0 - k) + k);
-                float gv = NdotV / (NdotV * (1.0 - k) + k);
-                return gl * gv;
+                // float gl = NdotL / (NdotL * (1.0 - k) + k);
+                // float gv = NdotV / (NdotV * (1.0 - k) + k);
+                // return gl * gv;
+                float3 VL = L+V;
+                float a = sqrt(pow(VL.x,2)+pow(VL.y,2)+pow(VL.z,2));
+
+                float3 h = (L+V) / a;
+                float Ge = (2 * (saturate(dot(N,h)) * NdotV)) / saturate(dot(V,h));
+                float Gs = (2 * (saturate(dot(N,h)) * NdotL)) / saturate(dot(V,h));
+
+                float G = min(Ge,Gs);
+                return min(1.0f,G);
             }
 
             fixed4 fragmentShader(v2f f) : SV_Target {
