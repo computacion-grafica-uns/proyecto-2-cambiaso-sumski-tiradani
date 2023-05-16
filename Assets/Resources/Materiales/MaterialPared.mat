@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialPiso
+  m_Name: MaterialPared
   m_Shader: {fileID: 4800000, guid: 89c5127ec26c1ce458fe98c83b0b7b2f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2efc577d4ada2864f97922902ba09b46, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8968b500bc04e1846aef62b84c1c8afd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -77,12 +77,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
+    - _DirectionalLightColor: {r: 0.9215687, g: 0.6509804, b: 0.6784314, a: 1}
+    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: 1.0693994, g: 5.843498, b: 2.0415268, a: 0}
-    - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _SpotLightPosition_w: {r: 1.2233994, g: 5.390499, b: 2.716528, a: 0}
+    - _PointLightColor: {r: 0.9215687, g: 0.6509804, b: 0.6784314, a: 1}
+    - _PointLightPosition_w: {r: 0, g: 5, b: 0, a: 1}
+    - _SpotLightColor: {r: 0.9215687, g: 0.6509804, b: 0.6784314, a: 1}
+    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 2, b: 0, a: 1}
   m_BuildTextureStacks: []
