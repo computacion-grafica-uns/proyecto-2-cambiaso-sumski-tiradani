@@ -3,7 +3,7 @@ Shader "Custom/BlinnPhongTextura"
     Properties
     {
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
-        _MaterialKa("Ambient Material Ka", Color) = (0,0,0,0)
+        _MaterialKa("Ambient Material", Color) = (0,0,0,0)
         
         [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
 
@@ -40,14 +40,14 @@ Shader "Custom/BlinnPhongTextura"
             struct vertexData {
                 float4 position : POSITION;
                 float3 normal : NORMAL;
-                float2 uv : TEXCOORD2;
+                float2 uv : TEXCOORD0;
             };
 
             struct v2f {
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
                 float4 position_w : TEXCOORD1;
-                float3 normal_w : TEXCOORD0;
-                float2 uv : TEXCOORD2;
+                float3 normal_w : TEXCOORD2;
             };
 
             float4 _AmbientLight;
@@ -99,7 +99,7 @@ Shader "Custom/BlinnPhongTextura"
                 float3 pointDiffuse = _PointLightIntensity * _MaterialKd * max(0, dot(N,point_L));
 
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
-                float3 H = (point_L + V) / 2; 
+                float3 H = normalize(point_L + V); 
 
                 float3 pointSpecular = _PointLightIntensity * _PointMaterialKs * pow(max(0,dot(H,N)),max(1,_PointMaterial_n));
 
@@ -110,7 +110,7 @@ Shader "Custom/BlinnPhongTextura"
                 float3 directionalDiffuse = _DirectionalLightIntensity * _MaterialKd * (max(0, dot(directional_L, N)));
                 
                 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
-                H = (directional_L + V)/2;
+                H = normalize(directional_L + V);
 
                 float3 directionalSpecular = _DirectionalLightIntensity * _DirectionalMaterialKs * pow(max(0,dot(H,N)),max(1,_DirectionalMaterial_n));
 
@@ -130,7 +130,7 @@ Shader "Custom/BlinnPhongTextura"
                 float3 spotDiffuse = _SpotLightIntensity * _MaterialKd * (diffCoef);
 
                 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
-                H = (spot_L + V)/2;
+                H = normalize(spot_L + V);
 
                 if(cosenoDireccion >= cos(radians(_SpotAperture)) ){
                     specCoef = pow(max(0,dot(H, N)), max(1,_SpotMaterial_n));

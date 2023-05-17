@@ -70,35 +70,36 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 1
+    - _Metallic: 0.791
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointMaterial_n: 11.66
-    - _Roughness: 0.385
+    - _PointMaterial_n: 6.64
+    - _Roughness: 0.663
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpotAperture: 45
+    - _SpotAperture: 46.5
     - _SpotMaterial_n: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientMaterial: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightColor: {r: 0, g: 0, b: 0, a: 1}
     - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _DirectionalLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
     - _DirectionalMaterialKs: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0, g: 0, b: 0, a: 0}
+    - _MaterialKa: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _PointLightPosition_w: {r: 1.0693994, g: 5.843498, b: 2.0415268, a: 0}
+    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PointLightPosition_w: {r: -0.74, g: 5.6, b: -0.85, a: 0}
     - _PointMaterialKs: {r: 1, g: 1, b: 1, a: 0}
-    - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _SpotLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpotLightColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpotLightDirection_w: {r: 0, g: 1.34, b: 0, a: 0}
+    - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 1.2233994, g: 5.390499, b: 2.716528, a: 0}
     - _SpotMaterialKs: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
