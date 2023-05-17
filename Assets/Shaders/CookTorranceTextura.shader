@@ -3,7 +3,7 @@ Shader "Custom/CookTorranceTextura"
 Properties
     {
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
-        _MaterialKa("Ambient Material", Color) = (0,0,0,0)
+        _AmbientMaterial("Ambient Material", Color) = (0,0,0,0)
 
         [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
         _Roughness ("Roughness", Range(0, 1)) = 0.5
@@ -39,21 +39,20 @@ Properties
             struct vertexData {
                 float4 position : POSITION;
                 float3 normal : NORMAL;
-                float2 uv : TEXCOORD2;
+                float2 uv : TEXCOORD0;
             };
 
             struct v2f {
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
                 float4 position_w : TEXCOORD1;
-                float3 normal_w : TEXCOORD0;
-                float2 uv : TEXCOORD2;
+                float3 normal_w : TEXCOORD2;
             };
 
             float4 _AmbientLight;
-            float4 _MaterialKa;
+            float4 _AmbientMaterial;
 
             sampler2D _MainText;
-            float4 _Albedo;
             float _Roughness;
             float _Metallic;
 
@@ -80,37 +79,21 @@ Properties
                 return output;
             }
 
-            float3 diffuseTerm(float3 L, float3 V, float3 N) {
-                float NdotL = saturate(dot(N, L));
-                float NdotV = saturate(dot(N, V));
-
-                float A = 1.0 - 0.5 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.33));
-                float B = 0.45 * ((_Roughness*_Roughness) / ((_Roughness*_Roughness) + 0.09));
-                float C = saturate(dot(normalize(V - N * NdotV), normalize(L - N * NdotL)));
-
-                float alpha  = max(acos(NdotL), acos(NdotV));
-                float beta   = min(acos(NdotL), acos(NdotV));
-
-                // preguntar!!!
-                return _Albedo.rgb / PI * (A + B * C * sin(alpha) * tan(beta)) * NdotL;
-                //return max(0, NdotL);
-            }
-
             float F(float3 V, float3 H){
-                float VdotH = saturate(dot(V, H)); 
+                float VdotH = max(dot(V, H),0); 
 
                 return _Metallic + (1.0 - _Metallic) * pow(1.0 - VdotH, 5);;
             }
 
             float D(float3 H, float3 N){
-                float NdotH = saturate(dot(N, H));
+                float NdotH = max(dot(N, H),0);
 
                 return pow(_Roughness,4) / (PI * pow(NdotH * NdotH * (pow(_Roughness,4) - 1.0) + 1.0, 2));
             }
 
             float G(float3 L, float3 V, float3 N){
-                float NdotL = saturate(dot(N, L));
-                float NdotV = saturate(dot(N, V));
+                float NdotL = max(dot(N, L),0);
+                float NdotV = max(dot(N, V),0);
                 float k  = _Roughness * _Roughness / 2.0;
 
                 float gl = NdotL / (NdotL * (1.0 - k) + k);
@@ -121,9 +104,8 @@ Properties
             fixed4 fragmentShader(v2f f) : SV_Target {
                 fixed4 fragColor = 0;
 
-                _Albedo = tex2D(_MainText, f.uv);
-
-                float3 ambient = _AmbientLight * _MaterialKa * _Albedo;
+                fixed4 color = tex2D(_MainText, f.uv);
+                float3 ambient = _AmbientLight * _AmbientMaterial;
 
                 // Point
                 float3 N = normalize(f.normal_w);
@@ -132,32 +114,32 @@ Properties
                 float3 H = (L + V) / 2; 
 
                 // Point Diffuse
-                float3 pointDiffuse = diffuseTerm(L,V,N) * _PointLightIntensity * _PointLightColor;
+                float3 pointDiffuse = max(0, dot(N, L)) * color.rgb * _PointLightIntensity * _PointLightColor;
 
                 // Point Specular Cook-Torrance
-                float NdotL = saturate(dot(N, L));
-                float NdotV = saturate(dot(N, V));
-                float3 pointSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV)) * PI * _PointLightIntensity * _PointLightColor;
+                float NdotL = max(0,dot(N, L));
+                float NdotV = max(0,dot(N, V));
+                float3 pointSpecular = max(0, F(V,H) * D(H,N) * G(L,V,N) / (4.0 * NdotV * NdotL) * _PointLightIntensity * _PointLightColor);
 
                 // Directional
                 L = normalize(-(_DirectionalLightDirection_w.xyz));
                 H = (L + V)/2;
 
                 // Directional Diffuse
-                float3 directionalDiffuse = diffuseTerm(L,V,N) * _DirectionalLightIntensity * _DirectionalLightColor ;
+                float3 directionalDiffuse = color.rgb; //max(0, saturate(dot(N, L))) * _Albedo.rgb * _DirectionalLightIntensity * _DirectionalLightColor ;
  
                 // Directional Specular Cook-Torrance
-                NdotL = saturate(dot(N, L));
-                NdotV = saturate(dot(N, V));
-                float3 directionalSpecular = saturate((F(V,H) * D(H,N) * G(L,V,N) / (4.0 * NdotV)) * PI * _DirectionalLightIntensity * _DirectionalLightColor) ;
+                NdotL = max(0, dot(N, L));
+                NdotV = max(0, dot(N, V));
+                float3 directionalSpecular = ((F(V,H) * D(H,N) * G(L,V,N) / (4.0 * NdotV * NdotL)) * _DirectionalLightIntensity * _DirectionalLightColor) ;
 
                 // Spot
 
                 L = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
                 H = (L + V)/2;
                 float cosenoDireccion = dot(-(_SpotLightDirection_w), L);
-                NdotL = saturate(dot(N, L));
-                NdotV = saturate(dot(N, V));
+                NdotL = max(0,dot(N, L));
+                NdotV = max(0,dot(N, V));
                 
                 float3 spotDiffuse = 0;
                 float3 spotSpecular = 0;
@@ -165,15 +147,15 @@ Properties
                 // Spot Diffuse
 
                 if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    spotDiffuse = diffuseTerm(L,V,N) * _SpotLightIntensity * _SpotLightColor;
+                    spotDiffuse = color.rgb; // max(0, saturate(dot(N, L))) * color.rgb  * _SpotLightIntensity * _SpotLightColor;
                 }
 
                 // Spot Specular Cook-Torrance
                 if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    spotSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * PI * _SpotLightIntensity * _SpotLightColor) ;
+                    spotSpecular = ((F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV * NdotL) * _SpotLightIntensity * _SpotLightColor) ;
                 }
 
-                fragColor = fixed4(ambient + lerp(pointDiffuse, pointSpecular, _Metallic) + lerp(directionalDiffuse, directionalSpecular, _Metallic) + lerp(spotDiffuse, spotSpecular, _Metallic), 1.0) ; // ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
+                fragColor.rgb = ambient + pointDiffuse + pointSpecular; //+ directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular; // ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
 
                 return fragColor;
             } 

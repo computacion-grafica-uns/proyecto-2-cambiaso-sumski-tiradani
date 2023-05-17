@@ -70,7 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointMaterial_n: 4.46
+    - _PointMaterial_n: 52
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpotAperture: 45
@@ -85,11 +85,11 @@ Material:
     - _DirectionalLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DirectionalMaterialKs: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.33219153, g: 0.3962264, b: 0.22988608, a: 0}
-    - _MaterialKd: {r: 0.68366146, g: 1, b: 0.03137255, a: 0}
+    - _MaterialKa: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
+    - _MaterialKd: {r: 0, g: 0.08577714, b: 0.7169812, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _PointLightPosition_w: {r: 1.0693994, g: 5.843498, b: 2.0415268, a: 0}
+    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PointLightPosition_w: {r: -5.64, g: 7.78, b: -1.74, a: 0}
     - _PointMaterialKs: {r: 1, g: 1, b: 1, a: 0}
     - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
