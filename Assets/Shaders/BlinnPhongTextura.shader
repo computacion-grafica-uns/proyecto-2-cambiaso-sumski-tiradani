@@ -2,29 +2,25 @@ Shader "Custom/BlinnPhongTextura"
 {
     Properties
     {
+        [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
+
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
         _MaterialKa("Ambient Material", Color) = (0,0,0,0)
-        
-        [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
+        _MaterialKs("Material Ks", Color) = (0,0,0,0)
+        _Material_n("Material n", float) = 1
 
         _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
-        _PointMaterialKs("Point Material Ks", Color) = (0,0,0,0)
-        _PointMaterial_n("Point Material n", float) = 1
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
 
         _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
-        _DirectionalMaterialKs("Directional Material Ks", Color) = (0,0,0,0)
-        _DirectionalMaterial_n("Directional Material n", float) = 1
         
         _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
         _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)
         _SpotAperture ("Spot Aperture", Range(0.0, 90.0)) = 0.1
-        _SpotMaterialKs("Spot Material Ks", Color) = (0,0,0,0)
-        _SpotMaterial_n("Spot Material n", float) = 1
     }
     SubShader 
     {
@@ -52,25 +48,21 @@ Shader "Custom/BlinnPhongTextura"
 
             float4 _AmbientLight;
             float4 _MaterialKa;
+            float4 _MaterialKs;
+            float _Material_n;
             
             sampler2D _MainText;
 
             float4 _PointLightIntensity;
             float4 _PointLightPosition_w;
-            float4 _PointMaterialKs;
-            float _PointMaterial_n;
 
             float4 _DirectionalLightIntensity;
             float4 _DirectionalLightDirection_w;
-            float4 _DirectionalMaterialKs;
-            float _DirectionalMaterial_n;
 
             float4 _SpotLightIntensity; 
             float4 _SpotLightPosition_w; 
             float4 _SpotLightDirection_w; 
             float _SpotAperture; 
-            float4 _SpotMaterialKs;
-            float _SpotMaterial_n;
 
 
             v2f vertexShader(vertexData v){
@@ -101,7 +93,7 @@ Shader "Custom/BlinnPhongTextura"
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
                 float3 H = normalize(point_L + V); 
 
-                float3 pointSpecular = _PointLightIntensity * _PointMaterialKs * pow(max(0,dot(H,N)),max(1,_PointMaterial_n));
+                float3 pointSpecular = _PointLightIntensity * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
 
                 // Directional
 
@@ -112,7 +104,7 @@ Shader "Custom/BlinnPhongTextura"
                 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
                 H = normalize(directional_L + V);
 
-                float3 directionalSpecular = _DirectionalLightIntensity * _DirectionalMaterialKs * pow(max(0,dot(H,N)),max(1,_DirectionalMaterial_n));
+                float3 directionalSpecular = _DirectionalLightIntensity * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
 
                 // Spot
 
@@ -133,10 +125,10 @@ Shader "Custom/BlinnPhongTextura"
                 H = normalize(spot_L + V);
 
                 if(cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    specCoef = pow(max(0,dot(H, N)), max(1,_SpotMaterial_n));
+                    specCoef = pow(max(0,dot(H, N)), max(1,_Material_n));
                 }
 
-                float3 spotSpecular = _SpotLightIntensity * _SpotMaterialKs * specCoef;
+                float3 spotSpecular = _SpotLightIntensity * _MaterialKs * specCoef;
 
                 fragColor.rgb = ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
 
