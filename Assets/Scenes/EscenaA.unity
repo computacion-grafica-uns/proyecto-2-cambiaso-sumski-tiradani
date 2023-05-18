@@ -620,7 +620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834873198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.6, y: 0, z: 0}
+  m_LocalPosition: {x: 12.67, y: 16.93, z: 25.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 834873198}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  intensity: {r: 1, g: 1, b: 1, a: 1}
   materiales: []
 --- !u!1001 &900089618
 PrefabInstance:
@@ -1075,8 +1075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 1170216941}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  aperture: 45
+  intensity: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  aperture: 0
   materiales: []
 --- !u!1001 &1214890940
 PrefabInstance:
@@ -1611,7 +1611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072532484}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.73, y: 21.7, z: 0}
+  m_LocalPosition: {x: 22.6, y: 21.7, z: 25.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 2072532484}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  intensity: {r: 1, g: 1, b: 1, a: 1}
   materiales: []
 --- !u!1001 &2087556279
 PrefabInstance:
