@@ -12,6 +12,7 @@ Shader "Custom/BlinnPhong"
         _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
 
+        _DirectionalLightColor ("Directional Light Color", Color) = (1, 0, 0, 1)
         _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
 
@@ -49,12 +50,15 @@ Shader "Custom/BlinnPhong"
             float4 _MaterialKs;
             float _Material_n;
 
+            float4 _PointLightColor;
             float4 _PointLightIntensity;
             float4 _PointLightPosition_w;
 
+            float4 _DirectionalLightColor;
             float4 _DirectionalLightIntensity;
             float4 _DirectionalLightDirection_w;
 
+            float4 _SpotLightColor;
             float4 _SpotLightIntensity; 
             float4 _SpotLightPosition_w; 
             float4 _SpotLightDirection_w; 
@@ -79,23 +83,23 @@ Shader "Custom/BlinnPhong"
 
                 float3 point_L = normalize(_PointLightPosition_w.xyz - f.position_w.xyz);
 
-                float3 pointDiffuse = _PointLightIntensity * _MaterialKd * max(0, dot(N,point_L));
+                float3 pointDiffuse = _PointLightIntensity * _PointLightColor * _MaterialKd * max(0, dot(N,point_L));
 
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
                 float3 H = normalize(point_L + V); 
 
-                float3 pointSpecular = _PointLightIntensity * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
+                float3 pointSpecular = _PointLightIntensity * _PointLightColor * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
 
                 // Directional
 
-                float directional_L = normalize(-(_DirectionalLightDirection_w.xyz));
+                float3 directional_L = normalize(-(_DirectionalLightDirection_w.xyz));
 
-                float3 directionalDiffuse = _DirectionalLightIntensity * _MaterialKd * (max(0, dot(directional_L, N)));
+                float3 directionalDiffuse = _DirectionalLightIntensity * _DirectionalLightColor * _MaterialKd * (max(0, dot(directional_L, N)));
                 
                 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
                 H = normalize(directional_L + V);
 
-                float3 directionalSpecular = _DirectionalLightIntensity * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
+                float3 directionalSpecular = _DirectionalLightIntensity * _DirectionalLightColor * _MaterialKs * pow(max(0,dot(H,N)),max(1,_Material_n));
 
                 // Spot
 
@@ -110,7 +114,7 @@ Shader "Custom/BlinnPhong"
                     diffCoef = max(0,dot(N,spot_L));
                 }
 
-                float3 spotDiffuse = _SpotLightIntensity * _MaterialKd * (diffCoef);
+                float3 spotDiffuse = _SpotLightIntensity * _SpotLightColor * _MaterialKd * (diffCoef);
 
                 V = normalize(_WorldSpaceCameraPos.xyz - f.position_w.xyz);
                 H = normalize(spot_L + V);
@@ -119,7 +123,7 @@ Shader "Custom/BlinnPhong"
                     specCoef = pow(max(0,dot(H, N)), max(1,_Material_n));
                 }
 
-                float3 spotSpecular = _SpotLightIntensity * _MaterialKs * specCoef;
+                float3 spotSpecular = _SpotLightIntensity * _SpotLightColor * _MaterialKs * specCoef;
 
                 fragColor.rgb = ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
 
