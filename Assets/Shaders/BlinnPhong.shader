@@ -5,25 +5,25 @@ Shader "Custom/BlinnPhong"
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
         _MaterialKa("Ambient Material Ka", Color) = (0,0,0,0)
         _MaterialKd("Material Kd", Color) = (0,0,0,0)
+        _PointMaterialKs("Point Material Ks", Color) = (0,0,0,0)
+        _DirectionalMaterialKs("Directional Material Ks", Color) = (0,0,0,0)
+        _SpotMaterialKs("Spot Material Ks", Color) = (0,0,0,0)
+        _PointMaterial_n("Point Material n", float) = 1
+        _DirectionalMaterial_n("Directional Material n", float) = 1
+        _SpotMaterial_n("Spot Material n", float) = 1
 
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
         _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
-        _PointMaterialKs("Point Material Ks", Color) = (0,0,0,0)
-        _PointMaterial_n("Point Material n", float) = 1
 
         _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
-        _DirectionalMaterialKs("Directional Material Ks", Color) = (0,0,0,0)
-        _DirectionalMaterial_n("Directional Material n", float) = 1
 
         _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
         _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)
         _SpotAperture ("Spot Aperture", Range(0.0, 90.0)) = 0.1
-        _SpotMaterialKs("Spot Material Ks", Color) = (0,0,0,0)
-        _SpotMaterial_n("Spot Material n", float) = 1
     }
     SubShader 
     {

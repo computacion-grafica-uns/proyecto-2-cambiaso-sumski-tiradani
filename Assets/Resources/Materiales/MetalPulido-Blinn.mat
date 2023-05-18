@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialBlinn
+  m_Name: MetalPulido-Blinn
   m_Shader: {fileID: 4800000, guid: 903542d2ef78ba841be818ed3cf13528, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -61,7 +61,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DirectionalMaterial_n: 1
+    - _DirectionalMaterial_n: 30
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -70,30 +70,30 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointMaterial_n: 52
+    - _PointMaterial_n: 30
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpotAperture: 45
-    - _SpotMaterial_n: 1
+    - _SpotAperture: 0.1
+    - _SpotMaterial_n: 30
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.57478845, g: 0, b: 0.8679245, a: 1}
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _DirectionalLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _DirectionalMaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _DirectionalLightDirection_w: {r: 0, g: 5, b: 0, a: 1}
+    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalMaterialKs: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
-    - _MaterialKd: {r: 0.65468216, g: 0.11792451, b: 1, a: 0}
+    - _MaterialKa: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0}
+    - _MaterialKd: {r: 1, g: 1, b: 1, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: -7.47, g: 6.36, b: -1.81, a: 0}
+    - _PointLightPosition_w: {r: 35.17, g: 5, b: 26.69, a: 1}
     - _PointMaterialKs: {r: 1, g: 1, b: 1, a: 0}
     - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _SpotLightIntensity: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _SpotLightPosition_w: {r: 1.2233994, g: 5.390499, b: 2.716528, a: 0}
-    - _SpotMaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _SpotLightDirection_w: {r: 0, g: 5, b: 0, a: 1}
+    - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 5, b: 0, a: 1}
+    - _SpotMaterialKs: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

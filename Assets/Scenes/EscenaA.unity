@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fdd101166454218449063a5ed3a4f707, type: 2}
+      objectReference: {fileID: 2100000, guid: e3330f82cd7f7be458fd2b3014a506b7, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (2)
@@ -471,6 +471,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95a42cd40fa3387408a34599799c1e26, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (8)
@@ -541,6 +545,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f79ca2aefe1f5544482a8d04ad9607ce, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (3)
@@ -861,7 +869,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6347be2dbbd7b2446859b35aeedd11c6, type: 2}
+      objectReference: {fileID: 2100000, guid: 5a6b78d28b95a73429b955ce4c06ff5d, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (5)
@@ -932,6 +940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dba61408bf994d344a9743125f0eb845, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (7)
@@ -1002,6 +1014,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a640a99b4b592264c854548fc0c73b81, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (6)
@@ -1121,6 +1137,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3330f82cd7f7be458fd2b3014a506b7, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (10)
@@ -1384,7 +1404,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e03ad2fc8f176a54897bc8ad5197e40d, type: 2}
+      objectReference: {fileID: 2100000, guid: fd1fca7a3edb75a40a36dfc341033033, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car
@@ -1453,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a03a01f3bc973554ea3de15779c25bca, type: 2}
+      objectReference: {fileID: 2100000, guid: 1013a1e9dd1685645862b06489a7c2be, type: 2}
     - target: {fileID: 919132149155446097, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_Name
       value: Open Car (1)

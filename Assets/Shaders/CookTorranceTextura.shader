@@ -117,7 +117,7 @@ Properties
                 float3 H = normalize(L+V); 
 
                 // Point Diffuse
-                float3 pointDiffuse = max(0,dot(N,L)) * _Color.rgb * _PointLightIntensity * _PointLightColor;
+                float3 pointDiffuse = max(0,dot(N,L)) * _Color * _PointLightIntensity * _PointLightColor;
 
                 // Point Specular Cook-Torrance
                 float NdotL = max(0.0001f,dot(L, N));
@@ -129,7 +129,7 @@ Properties
                 H = normalize(L+V); 
 
                 // Directional Diffuse
-                float3 directionalDiffuse = max(0,dot(N,L)) * _Color.rgb * _DirectionalLightIntensity * _DirectionalLightColor ;
+                float3 directionalDiffuse = max(0,dot(N,L)) * _Color * _DirectionalLightIntensity * _DirectionalLightColor ;
  
                 // Directional Specular Cook-Torrance
                 NdotL = max(0.0001f,dot(N, L));
@@ -150,7 +150,7 @@ Properties
                 // Spot Diffuse
 
                 if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    spotDiffuse = max(0,dot(N,L)) * _Color.rgb * _SpotLightIntensity * _SpotLightColor;
+                    spotDiffuse = max(0,dot(N,L)) * _Color * _SpotLightIntensity * _SpotLightColor;
                 }
 
                 // Spot Specular Cook-Torrance
