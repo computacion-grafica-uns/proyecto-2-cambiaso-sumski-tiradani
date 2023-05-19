@@ -4,9 +4,9 @@ Properties
     {
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
         _AmbientMaterial("Ambient Material (Ka)", Color) = (0,0,0,0)
-        _MaterialKs("Specular Color (Ks)", Color) = (0,0,0,0)
 
         [NoScaleOffset] _MainText ("Texture (Kd)", 2D) = "white" {}
+        _MaterialKs("Specular Color (Ks)", Color) = (0,0,0,0)
         _Roughness ("Roughness", Range(0, 1)) = 0.5
         _Metallic ("Metallic", Range(0, 1)) = 0.5
 

@@ -641,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 834873198}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: 0.5
+  intensity: 0.7
   materiales: []
 --- !u!1001 &900089618
 PrefabInstance:
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 1170216941}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: 0.5
+  intensity: 0.7
   aperture: 45
   materiales: []
 --- !u!1001 &1214890940
@@ -1367,11 +1367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.56652
+      value: 17.42
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -47.781696
+      value: -47.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fab58908346df5944b6fefafe92e3479, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 2072532484}
   color: {r: 1, g: 1, b: 1, a: 1}
-  intensity: 0.5
+  intensity: 0.7
   materiales: []
 --- !u!1001 &2087556279
 PrefabInstance:
