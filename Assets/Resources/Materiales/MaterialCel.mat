@@ -72,16 +72,16 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Treshold: 8.9
+    - _Treshold: 3.4
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 1, g: 0.43867922, b: 0.43867922, a: 1}
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 1, g: 0.3726415, b: 0.3726415, a: 0}
+    - _MaterialKa: {r: 0, g: 0, b: 0, a: 0}
     - _MaterialKd: {r: 0.2962299, g: 1, b: 0.24056602, a: 0}
-    - _PointLightColor: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
-    - _PointLightIntensity: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
-    - _PointLightPosition_w: {r: 0, g: 3.15, b: 0, a: 1}
+    - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PointLightPosition_w: {r: 10.5734, g: 2.2024994, b: 10.007526, a: 0}
   m_BuildTextureStacks: []

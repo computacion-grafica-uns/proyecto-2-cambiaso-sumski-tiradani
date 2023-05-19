@@ -7,7 +7,7 @@ public class LuzPoint : MonoBehaviour
 {
     public GameObject luz;
     public Color color = new Color(1, 1, 1);
-    public Color intensity = new Color(0.5f, 0.5f, 0.5f);
+    public float intensity = 0.5f;
     public Material[] materiales;
 
     // Start is called before the first frame update
@@ -19,11 +19,12 @@ public class LuzPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        intensity = Mathf.Clamp(intensity, 0.0f, 1.0f);
         foreach (Material material in materiales)
         {
             material.SetVector("_PointLightPosition_w", luz.transform.position);
             material.SetColor("_PointLightColor", color);
-            material.SetColor("_PointLightIntensity", intensity);
+            material.SetFloat("_PointLightIntensity", intensity);
         }
     }
 }

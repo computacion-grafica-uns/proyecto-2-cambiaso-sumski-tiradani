@@ -2,23 +2,22 @@ Shader "Custom/BlinnPhongTextura"
 {
     Properties
     {
-        [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
-
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
-        _MaterialKa("Ambient Material", Color) = (0,0,0,0)
+        _MaterialKa("Ambient Material (Ka)", Color) = (0,0,0,0)
+        [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
         _MaterialKs("Material Ks", Color) = (0,0,0,0)
         _Material_n("Material n", float) = 1
 
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
-        _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
+        _PointLightIntensity ("Point Light Intensity", Range(0.0, 1.0)) = 0.5
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
 
         _DirectionalLightColor ("Directional Light Color", Color) = (1, 0, 0, 1)
-        _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
+        _DirectionalLightIntensity ("Directional Light Intensity", Range(0.0, 1.0)) = 0.5
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
 
         _SpotLightColor ("Spot Light Color", Color) = (1, 0, 0, 1)
-        _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
+        _SpotLightIntensity ("Spotlight Intensity", Range(0.0, 1.0)) = 0.5
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)
         _SpotAperture ("Spot Aperture", Range(0.0, 90.0)) = 0.1
@@ -55,15 +54,15 @@ Shader "Custom/BlinnPhongTextura"
             sampler2D _MainText;
 
             float4 _PointLightColor;
-            float4 _PointLightIntensity;
+            float _PointLightIntensity;
             float4 _PointLightPosition_w;
 
             float4 _DirectionalLightColor;
-            float4 _DirectionalLightIntensity;
+            float _DirectionalLightIntensity;
             float4 _DirectionalLightDirection_w;
 
             float4 _SpotLightColor;
-            float4 _SpotLightIntensity; 
+            float _SpotLightIntensity; 
             float4 _SpotLightPosition_w; 
             float4 _SpotLightDirection_w; 
             float _SpotAperture; 

@@ -3,22 +3,23 @@ Shader "Custom/CookTorranceTextura"
 Properties
     {
         _AmbientLight ("Ambient Light", Color) = (0.25, 0.5, 0.5, 1)
-        _AmbientMaterial("Ambient Material", Color) = (0,0,0,0)
+        _AmbientMaterial("Ambient Material (Ka)", Color) = (0,0,0,0)
+        _MaterialKs("Specular Color (Ks)", Color) = (0,0,0,0)
 
-        [NoScaleOffset] _MainText ("Texture", 2D) = "white" {}
+        [NoScaleOffset] _MainText ("Texture (Kd)", 2D) = "white" {}
         _Roughness ("Roughness", Range(0, 1)) = 0.5
         _Metallic ("Metallic", Range(0, 1)) = 0.5
 
         _PointLightColor("Point Light Color", Color) = (0,0,0,0)
-        _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
+        _PointLightIntensity ("Point Light Intensity", Range(0.0, 1.0)) = 0.5
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
 
         _DirectionalLightColor ("Directional Light Color", Color) = (0,0,0,0)
-        _DirectionalLightIntensity ("Directional Light Intensity", Color) = (1, 1, 1, 1)
+        _DirectionalLightIntensity ("Directional Light Intensity", Range(0.0, 1.0)) = 0.5
         _DirectionalLightDirection_w ("Directional Light Direction", Vector) = (0, 5, 0, 1)
 
         _SpotLightColor("Spotlight Color", Color) = (0,0,0,0)
-        _SpotLightIntensity ("Spotlight Intensity", Color) = (1, 1, 1, 1)
+        _SpotLightIntensity ("Spotlight Intensity", Range(0.0, 1.0)) = 0.5
         _SpotLightPosition_w ("Spotlight Position (World)", Vector) = (0, 5, 0, 1)
         _SpotLightDirection_w ("Spotlight Direction", Vector) = (0, 5, 0, 1)
         _SpotAperture ("Spot Aperture", Range(0.0, 90.0)) = 0.1
@@ -51,20 +52,21 @@ Properties
 
             float4 _AmbientLight;
             float4 _AmbientMaterial;
+            float4 _MaterialKs;
 
             sampler2D _MainText;
             float _Roughness;
             float _Metallic;
 
-            float4 _PointLightIntensity;
+            float _PointLightIntensity;
             float4 _PointLightPosition_w;
             float4 _PointLightColor;
 
-            float4 _DirectionalLightIntensity;
+            float _DirectionalLightIntensity;
             float4 _DirectionalLightDirection_w;
             float4 _DirectionalLightColor;
 
-            float4 _SpotLightIntensity; 
+            float _SpotLightIntensity; 
             float4 _SpotLightPosition_w; 
             float4 _SpotLightDirection_w; 
             float _SpotAperture; 
@@ -122,7 +124,7 @@ Properties
                 // Point Specular Cook-Torrance
                 float NdotL = max(0.0001f,dot(L, N));
                 float NdotV = max(0.0001f,dot(N, V));
-                float3 pointSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV)  * _PointLightColor;
+                float3 pointSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV)  * _PointLightColor * _MaterialKs;
 
                 // Directional
                 L = normalize(-(_DirectionalLightDirection_w.xyz));
@@ -134,7 +136,7 @@ Properties
                 // Directional Specular Cook-Torrance
                 NdotL = max(0.0001f,dot(N, L));
                 NdotV = max(0.0001f,dot(N, V));
-                float3 directionalSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * _DirectionalLightIntensity * _DirectionalLightColor;
+                float3 directionalSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * _DirectionalLightIntensity * _DirectionalLightColor * _MaterialKs;
 
                 // Spot
 
@@ -155,7 +157,7 @@ Properties
 
                 // Spot Specular Cook-Torrance
                 if (cosenoDireccion >= cos(radians(_SpotAperture)) ){
-                    spotSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * _SpotLightIntensity * _SpotLightColor;
+                    spotSpecular = (F(V,H) * D(H,N) * G(L,V,N)) / (4.0 * NdotV) * _SpotLightIntensity * _SpotLightColor * _MaterialKs;
                 }
 
                 fragColor.rgb = ambient + pointDiffuse + pointSpecular + directionalDiffuse + directionalSpecular + spotDiffuse + spotSpecular;
