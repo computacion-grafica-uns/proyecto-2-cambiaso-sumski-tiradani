@@ -67,7 +67,6 @@ Shader "Custom/BlinnPhongTextura"
             float4 _SpotLightDirection_w; 
             float _SpotAperture; 
 
-
             v2f vertexShader(vertexData v){
                 v2f output;
                 output.vertex = UnityObjectToClipPos(v.position);

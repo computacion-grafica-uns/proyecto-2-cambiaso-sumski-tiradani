@@ -9,7 +9,7 @@ Shader "Custom/Cel"
         _MaterialKa("Ambient Material Ka", Color) = (0,0,0,0)
 
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
-        _PointLightIntensity ("Point Light Intensity", Color) = (1, 1, 1, 1)
+        _PointLightIntensity ("Point Light Intensity", Range(0.0, 1.0)) = 0.5
         _PointLightPosition_w ("Point Light Position (World)", Vector) = (0, 5, 0, 1)
     }
     SubShader
