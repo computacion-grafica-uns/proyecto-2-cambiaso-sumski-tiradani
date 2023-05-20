@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Maceta-Blinn
-  m_Shader: {fileID: 4800000, guid: 903542d2ef78ba841be818ed3cf13528, type: 3}
+  m_Name: Maceta-Cook
+  m_Shader: {fileID: 4800000, guid: 67d92ef78e045cf4bb72f8d0da953395, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -61,47 +61,38 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DirectionalLightIntensity: 0.7
-    - _DirectionalMaterial_n: 1
+    - _DirectionalLightIntensity: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Material_n: 1
-    - _Metallic: 0
+    - _Metallic: 0.77
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointLightIntensity: 0.7
-    - _PointMaterial_n: 1
+    - _PointLightIntensity: 1
+    - _Roughness: 0.775
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpotAperture: 45
-    - _SpotLightIntensity: 0.7
-    - _SpotMaterial_n: 1
+    - _SpotAperture: 63
+    - _SpotLightIntensity: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.81568635, g: 0.454902, b: 0.35686275, a: 1}
     - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalMaterialKs: {r: 0.6784314, g: 0.32941177, b: 0.21960786, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _LightPosition_w: {r: 0, g: 5, b: 0, a: 1}
-    - _MaterialKa: {r: 0.26415092, g: 0.16169898, b: 0.13805623, a: 0}
-    - _MaterialKd: {r: 0.8156863, g: 0.45490196, b: 0.35686275, a: 0}
+    - _MaterialKa: {r: 0.2627451, g: 0.16078432, b: 0.13725491, a: 1}
     - _MaterialKs: {r: 0, g: 0, b: 0, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _PointLightPosition_w: {r: 10.5734, g: 2.2024994, b: 10.007526, a: 0}
-    - _PointMaterialKs: {r: 0.6784314, g: 0.32941177, b: 0.21960786, a: 1}
     - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
+    - _SpotLightDirection_w: {r: 0, g: -16.21, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightPosition_w: {r: -0.8966005, g: 9.872499, b: 1.0475273, a: 0}
-    - _SpotMaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _SpotLightPosition_w: {r: -0.08, g: 1.6, b: 21, a: 0}
   m_BuildTextureStacks: []

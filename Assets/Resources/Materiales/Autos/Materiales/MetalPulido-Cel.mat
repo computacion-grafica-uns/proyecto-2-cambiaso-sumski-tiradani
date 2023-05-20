@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialCelTextura
-  m_Shader: {fileID: 4800000, guid: 6e7f00a45098d724bad0b85700465713, type: 3}
+  m_Name: MetalPulido-Cel
+  m_Shader: {fileID: 4800000, guid: 6e34f2563fcc0034b90f6fb3e0fa2ca2, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -41,11 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c036f0f63f583ba4aac7071a75c1bb3a, type: 3}
-        m_Scale: {x: 5.75, y: -4.29}
-        m_Offset: {x: -34.71, y: 22.81}
-    - _MainText:
-        m_Texture: {fileID: 2800000, guid: a9cd504f2bd434e498c440683b8da4bc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -62,35 +58,40 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Ambient: 0.31
     - _BumpScale: 1
-    - _CelShadingBlurWidth: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DirectionalLightIntensity: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 9.2
     - _GlossyReflections: 1
-    - _Material_n: 1.09
+    - _Material_n: 2.69
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointLightIntensity: 0.7
+    - _PointLightIntensity: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpotAperture: 90
+    - _SpotLightIntensity: 0
     - _SrcBlend: 1
-    - _Treshold: 5.3
+    - _Treshold: 4.7
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 1, g: 1, b: 1, a: 0}
+    - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightDirection_w: {r: 0.19, g: -0.87, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.9622642, g: 0.46751517, b: 0.46751517, a: 0}
-    - _MaterialKd: {r: 1, g: 0, b: 0, a: 0}
+    - _MaterialKa: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
+    - _MaterialKd: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 1}
     - _MaterialKs: {r: 1, g: 1, b: 1, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: 10.5734, g: 2.2024994, b: 10.007526, a: 0}
+    - _PointLightPosition_w: {r: 0, g: 5, b: 0, a: 1}
+    - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightDirection_w: {r: 0.9, g: 9.89, b: -3.31, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: -16.9, b: 0, a: 1}
   m_BuildTextureStacks: []
