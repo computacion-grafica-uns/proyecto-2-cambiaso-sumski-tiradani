@@ -22,7 +22,7 @@ public class CamaraPrimeraPersona : MonoBehaviour
 
     private void PosicionarCamara()
     {
-        camara.transform.position = new Vector3(2.5f, 1.5f, 1f);
+        camara.transform.position = new Vector3(0f, 1.8f, 0f);
     }
 
     void Update()

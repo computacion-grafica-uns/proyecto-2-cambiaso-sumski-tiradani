@@ -26,6 +26,8 @@ public class CamaraOrbital: MonoBehaviour
     void Start()
     {
         FillTargets();
+        if (escenaB)
+            fov = 25;
         PositionCamera();
     }
 
@@ -92,6 +94,17 @@ public class CamaraOrbital: MonoBehaviour
                     fov = 50;
                 else if (previousTarget != 0 && currentTarget == 0)
                     fov = 100;
+            }
+
+            if (escenaB)
+            {
+                if (previousTarget != currentTarget)
+                {
+                    if (previousTarget == 0)
+                        fov = 25;
+                    else if (previousTarget != 0 && currentTarget == 0)
+                        fov = 25;
+                }
             }
 
             PositionCamera();
