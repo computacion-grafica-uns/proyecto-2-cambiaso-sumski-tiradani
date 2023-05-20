@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialProcedural
+  m_Name: Marmol
   m_Shader: {fileID: 4800000, guid: a9e856c3db795c44e95ea90ba9814055, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -60,25 +60,36 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Density: 34
+    - _Density: 33.3
     - _DetailNormalMapScale: 1
+    - _DirectionalLightIntensity: 0.465
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Material_n: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PointLightIntensity: 0.538
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpotAperture: 90
+    - _SpotLightIntensity: 0.435
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
+    - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightDirection_w: {r: 86.76, g: -45.6, b: -13.33, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MaterialKs: {r: 0, g: 0, b: 0, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PointLightPosition_w: {r: 32.2, g: 90.4, b: 0, a: 1}
+    - _Resolution: {r: 0.28, g: 22.5, b: 1.01, a: 0.46}
     - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightDirection_w: {r: 6.3, g: 7.05, b: 29.6, a: 1}
+    - _SpotLightPosition_w: {r: -78.38, g: -7.65, b: 51.42, a: 1}
   m_BuildTextureStacks: []

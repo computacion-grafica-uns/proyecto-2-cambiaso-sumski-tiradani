@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialNuevo
-  m_Shader: {fileID: 4800000, guid: 903542d2ef78ba841be818ed3cf13528, type: 3}
+  m_Name: Madera
+  m_Shader: {fileID: 4800000, guid: 3912b570f05ab0949992982e07ab820c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -41,10 +41,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b668e8d5e5a9ce343b2d2540bcf952e6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainText:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -62,13 +58,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Aperture: 42.54
     - _BumpScale: 1
-    - _ColorMask: 15
     - _Cutoff: 0.5
+    - _Density: 26.59
     - _DetailNormalMapScale: 1
-    - _DirectionalLightIntensity: 0.7
-    - _DirectionalMaterial_n: 1.37
+    - _DirectionalLightIntensity: 0.472
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -78,45 +72,24 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointLightIntensity: 0.7
-    - _PointMaterial_n: 9.76
+    - _PointLightIntensity: 0.443
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpotAperture: 45
-    - _SpotLightIntensity: 0.7
-    - _SpotMaterial_n: 20.4
+    - _SpotAperture: 90
+    - _SpotLightIntensity: 0.516
     - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.24999997, g: 0.5, b: 0.5, a: 1}
-    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalMaterialKs: {r: 0, g: 0.13798308, b: 1, a: 0}
+    - _DirectionalLightDirection_w: {r: 7.98, g: -8.57, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor_w: {r: 0.29019615, g: 0.7344834, b: 0.8, a: 1}
-    - _LightDirection_w: {r: 0, g: 5, b: 0, a: 1}
-    - _LightPosition_w: {r: 19.1, g: 598, b: -124, a: 1}
-    - _MaterialColor: {r: 0.85882354, g: 0.1490196, b: 0.19645253, a: 1}
-    - _MaterialKa: {r: 0, g: 0, b: 0, a: 0}
-    - _MaterialKd: {r: 0.031764988, g: 0.01775543, b: 0.1792453, a: 0}
-    - _MaterialKs: {r: 0, g: 0, b: 0, a: 0}
+    - _MaterialKs: {r: 0.2924528, g: 0.18738447, b: 0.10070309, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PointLightPosition_w: {r: 10.5734, g: 2.2024994, b: 10.007526, a: 0}
-    - _PointMaterialKs: {r: 0.47613168, g: 1, b: 0, a: 0}
+    - _PointLightPosition_w: {r: 28.12, g: 55.63, b: 0, a: 1}
+    - _Resolution: {r: 10, g: -36.4, b: 0, a: 0}
     - _SpotLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
-    - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightPosition_w: {r: -0.8966005, g: 9.872499, b: 1.0475273, a: 0}
-    - _SpotMaterialKs: {r: 0.023584902, g: 0.21247214, b: 1, a: 0}
+    - _SpotLightDirection_w: {r: 6.4, g: 45.7, b: 1.07, a: 1}
+    - _SpotLightPosition_w: {r: -57.98, g: 6.62, b: 199.57, a: 1}
   m_BuildTextureStacks: []
