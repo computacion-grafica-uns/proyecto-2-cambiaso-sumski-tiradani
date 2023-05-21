@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaterialBlinn
+  m_Name: PinturaBlanca-Blinn
   m_Shader: {fileID: 4800000, guid: 903542d2ef78ba841be818ed3cf13528, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -83,16 +83,16 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.57478845, g: 0, b: 0.8679245, a: 1}
+    - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalMaterialKs: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
-    - _MaterialKd: {r: 0.65468216, g: 0.11792451, b: 1, a: 0}
-    - _MaterialKs: {r: 1, g: 1, b: 1, a: 0}
+    - _MaterialKa: {r: 0, g: 0, b: 0, a: 0}
+    - _MaterialKd: {r: 1, g: 1, b: 1, a: 0}
+    - _MaterialKs: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 0}
     - _PointLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _PointLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _PointLightPosition_w: {r: -0.09760058, g: 5.3744984, b: 2.0415268, a: 0}

@@ -61,7 +61,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DirectionalLightIntensity: 0.5
+    - _DirectionalLightIntensity: 0.83
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 187.9
@@ -71,15 +71,15 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointLightIntensity: 0.5
+    - _PointLightIntensity: 0.83
     - _RimAmount: 0.716
     - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpotAperture: 45
-    - _SpotLightIntensity: 0.5
+    - _SpotLightIntensity: 0.85
     - _SrcBlend: 1
-    - _Treshold: 3
+    - _Treshold: 6.2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
