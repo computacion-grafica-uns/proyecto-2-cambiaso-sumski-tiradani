@@ -122,7 +122,7 @@ Shader "Custom/ShaderMultitexturaGotasAgua"
 
                 // Spot
 
-                //float diffCoef = 0;
+                diffCoef = 0;
                 float specCoef = 0;
 
                 float3 spot_L = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
