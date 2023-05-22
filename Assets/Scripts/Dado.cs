@@ -21,6 +21,11 @@ public class Dado : MonoBehaviour
 
 
         CreateModel();
+
+        objetoCuadrado.GetComponent<MeshRenderer>().material = newMaterial;
+
+        objetoCuadrado.transform.position = new Vector3(2.124f, 0.1f, -0.489f);
+        objetoCuadrado.transform.rotation = Quaternion.Euler(0, -23.253f, 0);
     }
 
     // Update is called once per frame
@@ -128,8 +133,6 @@ public class Dado : MonoBehaviour
         objetoCuadrado.GetComponent<MeshFilter>().mesh.vertices = vertices;
         objetoCuadrado.GetComponent<MeshFilter>().mesh.triangles = triangulo;
         objetoCuadrado.GetComponent<MeshFilter>().mesh.uv = uvs;
-
-        objetoCuadrado.GetComponent<MeshRenderer>().material = newMaterial; 
 
         objetoCuadrado.transform.localScale = new Vector3(0.11f,0.11f,0.11f);
     }
