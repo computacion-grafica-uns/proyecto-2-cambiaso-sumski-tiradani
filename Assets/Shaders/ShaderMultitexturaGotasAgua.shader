@@ -93,7 +93,9 @@ Shader "Custom/ShaderMultitexturaGotasAgua"
                 // Textures
                 if(gotas.b > 0.03f)
                 {
-                    _MaterialKd = float3(gotas.r/2,gotas.g/2,gotas.b*1.5);
+                    _MaterialKd = float3(gotas.r/2,gotas.g/2,gotas.b*3);
+                    _MaterialKs = float4(1,1,1,1);
+                    _Material_n = _Material_n * 30;
                 }else
                 {
                     _MaterialKd = mainTex;
