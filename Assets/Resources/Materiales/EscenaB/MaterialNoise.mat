@@ -61,6 +61,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DirectionalLightIntensity: 1
     - _DstBlend: 0
     - _Factor1: 89.33
     - _Factor2: 282.5
@@ -73,6 +74,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PointLightIntensity: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -80,5 +82,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PointLightColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PointLightPosition_w: {r: 10.5734, g: 2.2024994, b: 10.007526, a: 0}
+    - _SpotLightColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

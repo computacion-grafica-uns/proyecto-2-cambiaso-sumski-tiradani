@@ -6,6 +6,7 @@ public class Dado : MonoBehaviour
 {
     private Vector3[] vertices;
     private GameObject objetoCuadrado;
+    public GameObject rotacion;
     private Vector2[] uvs;
     private int[] triangulo;
     public Material newMaterial;
@@ -26,6 +27,8 @@ public class Dado : MonoBehaviour
 
         objetoCuadrado.transform.position = new Vector3(2.124f, 0.1f, -0.489f);
         objetoCuadrado.transform.rotation = Quaternion.Euler(0, -23.253f, 0);
+
+        objetoCuadrado.transform.SetParent(rotacion.transform);
     }
 
     // Update is called once per frame
